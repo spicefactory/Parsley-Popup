@@ -1,10 +1,11 @@
 package org.spicefactory.parsley.popup {
+
 import com.adobe.cairngorm.popup.PopUpWrapper;
 
 import org.spicefactory.lib.logging.LogContext;
 import org.spicefactory.lib.logging.Logger;
 import org.spicefactory.parsley.core.context.Context;
-import org.spicefactory.parsley.core.state.GlobalState;
+import org.spicefactory.parsley.view.ParentContext;
 
 import mx.core.IFlexDisplayObject;
 
@@ -53,7 +54,7 @@ public class CairngormPopUpSupport extends PopUpWrapper {
 	}
 	
 	private function findContext (view:DisplayObject) : void {
-		GlobalState.views.findContextInHierarchy(view, contextFound);
+		ParentContext.view(view).available(contextFound);
 	}
 	
 	private function contextFound (context:Context) : void {
