@@ -54,7 +54,7 @@ public class CairngormPopUpSupport extends PopUpWrapper {
 	}
 	
 	private function findContext (view:DisplayObject) : void {
-		ParentContext.view(view).available(contextFound);
+		ParentContext.view(view).available(contextFound).execute();
 	}
 	
 	private function contextFound (context:Context) : void {
